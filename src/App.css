@@ -15,6 +15,7 @@
 .heading {
   margin: auto 0;
   border: 2px solid black;
+  width: 10px;
   /* display       : flex;
   justify-content: center;
   align-items   : center;
