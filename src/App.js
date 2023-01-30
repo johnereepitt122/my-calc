@@ -10,14 +10,28 @@ function Num({ message="?", onClick }) {
   );
 }
 
+function Title() {
+  return (
+    <div class= "title-container"> <h1> My Mini Calculator </h1> </div>
+  )
+}
+
+
 function Display({display}) {
   return ( 
-    <div> {display}
+    <div id="result"> {display}
     </div>
   );
 }
 
 function App() { 
+
+const [displ, resDes] = useState(0);
+const [oper, operPick] = useState(null);
+const [num1, valNum1] = useState(null);
+const [num2, valNum2] = useState(null);
+
+
 
 
 const[disp, setDisp] = useState('0');
@@ -25,11 +39,13 @@ const[disp, setDisp] = useState('0');
 const numberClickHandler = (e) => {
   e.preventDefault();
   const value = e.target.innerHTML; 
+  // if(oper===null)
   setDisp(value);
   console.log(value);
 }
 
   return (
+    <div>
  <div class="whole-container"> 
  <br></br>
       <div class="heading"> 
@@ -73,6 +89,8 @@ const numberClickHandler = (e) => {
       <Num message="+" onClick={numberClickHandler}/>
       </section>
       </div>
+      </div>
+      <Title> </Title>
       </div>
 
   );
